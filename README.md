@@ -13,7 +13,7 @@ Over the next two weeks you will build a complete, end-to-end **weather intellig
 | Week | Focus | Skills Applied |
 |------|-------|----------------|
 | **Week 1** (Days 1–5) | Data Engineering | Unit 2 — data sources, databases, ETL, pipelines |
-| **Week 2** (Days 6–10) | Statistical Analysis & Prediction | Unit 3 — descriptive stats, hypothesis testing, correlation, modeling |
+| **Week 2** (Days 6–8 + Presentation) | Statistical Analysis & Prediction | Unit 3 — descriptive stats, hypothesis testing, correlation, modeling |
 
 **You must:**
 
@@ -22,9 +22,9 @@ Over the next two weeks you will build a complete, end-to-end **weather intellig
 3. Ingest **real-time forecast data** (7-day forecast) for the same cities.
 4. Store all data in a local **DuckDB** database with a well-designed schema.
 5. Conduct **exploratory data analysis** with descriptive statistics and visualisations.
-6. Formulate and execute **at least 3 formal hypothesis tests**.
+6. Formulate and execute **at least one formal hypothesis test** (more are encouraged if time permits).
 7. Build **at least one statistical prediction model** (e.g., predict next-day temperature, rain probability, or seasonal anomaly) with confidence intervals.
-8. Present findings on the final day with a live pipeline demo.
+8. Present findings on presentation day with a live pipeline demo.
 
 ## Timeline
 
@@ -32,16 +32,15 @@ Each day has a brief in the [`daily-briefs/`](daily-briefs/) folder with detaile
 
 | Day | Date | Brief | Focus |
 |-----|------|-------|-------|
-| 1 | 13 Apr | [Project Kick-Off & API Exploration](daily-briefs/day-01-project-kickoff.md) | Repo setup, API exploration, city/variable selection, project plan |
-| 2 | 14 Apr | [Data Ingestion Pipeline](daily-briefs/day-02-data-ingestion.md) | Ingestion module, config, full historical fetch, data audit |
-| 3 | 15 Apr | [Database Design & Data Loading](daily-briefs/day-03-database-design.md) | DuckDB schema, loading functions, validation queries |
-| 4 | 16 Apr | [Data Cleaning & Feature Engineering](daily-briefs/day-04-data-cleaning.md) | Quality assessment, cleaning pipeline, feature engineering, quality report |
-| 5 | 17 Apr | [Pipeline Automation & Data Quality](daily-briefs/day-05-pipeline-automation.md) | Orchestrator, incremental loading, quality gates, logging |
-| 6 | 20 Apr | [Exploratory Data Analysis](daily-briefs/day-06-eda.md) | Descriptive stats, distributions, time series, cross-city comparison |
-| 7 | 21 Apr | [Hypothesis Testing](daily-briefs/day-07-hypothesis-testing.md) | 3+ formal tests, assumption checks, effect sizes, multiple testing |
-| 8 | 22 Apr | [Correlation & Feature Analysis](daily-briefs/day-08-correlation.md) | Correlation matrices, VIF, ANOVA, feature selection |
-| 9 | 23 Apr | [Predictive Modeling & Evaluation](daily-briefs/day-09-predictive-modeling.md) | 2+ models, train/test, confidence intervals, residual diagnostics |
-| 10 | 24 Apr | [Final Presentation](daily-briefs/day-10-final-presentation.md) | 10 min presentation, live demo, project submission |
+| 1 | 20 Apr | [Project Kick-Off & API Exploration](daily-briefs/day-01-project-kickoff.md) | Repo setup, API exploration, city/variable selection, project plan |
+| 2 | 21 Apr | [Data Ingestion Pipeline](daily-briefs/day-02-data-ingestion.md) | Ingestion module, config, full historical fetch, data audit |
+| 3 | 22 Apr | [Database Design & Data Loading](daily-briefs/day-03-database-design.md) | DuckDB schema, loading functions, validation queries |
+| 4 | 23 Apr | [Data Cleaning & Feature Engineering](daily-briefs/day-04-data-cleaning.md) | Quality assessment, cleaning pipeline, feature engineering, quality report |
+| 5 | 24 Apr | [Pipeline Automation & Data Quality](daily-briefs/day-05-pipeline-automation.md) | Orchestrator, incremental loading, quality gates, logging |
+| 6 | 27 Apr | [Exploratory Data Analysis](daily-briefs/day-06-eda.md) | Descriptive stats, distributions, time series, cross-city comparison |
+| 7 | 28 Apr | [Statistical Analysis & Feature Selection](daily-briefs/day-07-statistical-analysis.md) | Hypothesis testing, correlation, feature selection |
+| 8 | 29 Apr | [Predictive Modeling & Evaluation](daily-briefs/day-08-predictive-modeling.md) | 2+ models, train/test, confidence intervals, residual diagnostics |
+| — | 30 Apr | [Final Presentation](daily-briefs/day-09-final-presentation.md) | 10 min presentation, live demo, project submission |
 
 ## Getting Started
 
@@ -49,8 +48,8 @@ Each day has a brief in the [`daily-briefs/`](daily-briefs/) folder with detaile
 
 ```bash
 # Fork this repo on GitHub, then:
-git clone https://github.com/<your-username>/m4-project-weather-pipeline.git
-cd m4-project-weather-pipeline
+git clone https://github.com/<your-username>/m5-project-weather-pipeline.git
+cd m5-project-weather-pipeline
 ```
 
 ### 2. Install Dependencies
@@ -74,14 +73,14 @@ Open [`daily-briefs/day-01-project-kickoff.md`](daily-briefs/day-01-project-kick
 ## Repository Structure
 
 ```
-m4-project-weather-pipeline/
+m5-project-weather-pipeline/
 ├── README.md               # This file — project overview
 ├── requirements.txt        # Python dependencies
 ├── .gitignore
 ├── daily-briefs/           # Day-by-day task briefs (read-only reference)
 │   ├── day-01-project-kickoff.md
 │   ├── ...
-│   └── day-10-final-presentation.md
+│   └── day-09-final-presentation.md
 ├── src/                    # Your pipeline code
 │   ├── __init__.py
 │   ├── ingestion.py        # Day 2
@@ -95,7 +94,7 @@ m4-project-weather-pipeline/
 │   ├── day_01_exploration.ipynb
 │   ├── day_02_ingestion.ipynb
 │   ├── ...
-│   └── day_09_modeling.ipynb
+│   └── day_08_modeling.ipynb
 ├── data/
 │   └── raw/                # Raw API data (gitignored)
 ├── reports/

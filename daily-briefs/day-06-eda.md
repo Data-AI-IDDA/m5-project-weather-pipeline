@@ -4,7 +4,7 @@
 
 Welcome to Week 2. Your pipeline is built and running. Now it's time to **ask questions of the data**. Today you will conduct a thorough exploratory data analysis (EDA) using descriptive statistics and visualisations to uncover patterns, anomalies, and relationships in your weather data.
 
-Everything you discover today will inform your hypothesis tests (Day 7), feature analysis (Day 8), and predictive model (Day 9).
+Everything you discover today will inform your statistical analysis and feature selection (Day 7) and predictive model (Day 8).
 
 ## Today's Objectives
 
@@ -44,7 +44,7 @@ Create visualisations showing:
 
 1. **Paired time series**: Plot the same variable for all cities on one chart for a single year. How correlated are they?
 2. **Scatter matrix**: Create a pairplot of 3-4 key variables for one city.
-3. **Correlation preview**: Compute and display a correlation matrix across all numerical features for one city. Note which pairs look strongly correlated — you will test these formally on Day 8.
+3. **Correlation preview**: Compute and display a correlation matrix across all numerical features for one city. Note which pairs look strongly correlated — you will explore these further on Day 7.
 
 ### Task 5 — Key Findings
 

@@ -1,4 +1,4 @@
-# Day 9 — Predictive Modeling & Evaluation
+# Day 8 — Predictive Modeling & Evaluation
 
 ## Context
 
@@ -13,7 +13,7 @@ You have clean data, engineered features, tested hypotheses, and selected your f
 
 ## Prediction Target
 
-Use the prediction target you identified on Day 8. Typical targets for weather data include:
+Use the prediction target you identified on Day 7. Typical targets for weather data include:
 
 - **Next-day maximum temperature** (regression)
 - **Whether precipitation will exceed a threshold** (classification)
@@ -25,7 +25,7 @@ Choose one that is interesting to you and feasible with your data.
 
 ### Task 1 — Data Preparation
 
-In `notebooks/day_09_modeling.ipynb`:
+In `notebooks/day_08_modeling.ipynb`:
 
 1. **Create train/test split**: Use a temporal split (e.g., train on 2019–2023, test on 2024). Do **not** use random splitting — weather data is time-ordered.
 2. **Feature matrix**: Assemble your selected features into X_train, X_test, y_train, y_test.
@@ -94,7 +94,7 @@ Select the best model and justify your choice. "Best" considers accuracy, interp
 
 Push your work and submit a Pull Request containing:
 
-- [x] `notebooks/day_09_modeling.ipynb` with all tasks completed
+- [x] `notebooks/day_08_modeling.ipynb` with all tasks completed
 - [x] At least 2 models built and evaluated against a naive baseline
 - [x] Confidence intervals for predictions
 - [x] Residual diagnostics for the best model

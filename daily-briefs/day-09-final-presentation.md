@@ -1,8 +1,8 @@
-# Day 10 — Final Presentation (Assessment)
+# Final Presentation (Assessment)
 
 ## Overview
 
-This is the final assessment for the two-week Weather Intelligence Pipeline project. You will present your complete project, demonstrate your end-to-end pipeline, and submit your final repository. The assessment evaluates everything you have built across Days 1–9.
+This is the final assessment for the Weather Intelligence Pipeline project. You will present your complete project, demonstrate your end-to-end pipeline, and submit your final repository. The assessment evaluates everything you have built across Days 1–8.
 
 ## Presentation
 
@@ -28,8 +28,8 @@ Prepare and deliver a **10-minute presentation** covering the full project journ
 
 #### 4. Statistical Analysis (2–3 minutes)
 - Most interesting EDA findings (show 2–3 key visualisations)
-- Hypothesis testing results (focus on the most surprising or impactful)
-- Feature analysis highlights
+- Hypothesis testing and correlation results (focus on the most impactful)
+- Feature selection highlights
 
 #### 5. Prediction Model (2–3 minutes)
 - Prediction target and feature set
@@ -56,7 +56,7 @@ Prepare and deliver a **10-minute presentation** covering the full project journ
 Your submitted repository must contain:
 
 - **Complete, well-organised codebase** in `src/` with all pipeline modules
-- **All 9 previous notebooks** (day_01 through day_09), clean and runnable top-to-bottom
+- **All 8 daily notebooks** (day_01 through day_08), clean and runnable top-to-bottom
 - **`README.md`** updated with final project description, setup instructions, and results summary
 - **`reports/`** folder with key figures and the data quality report
 - **`requirements.txt`** complete and tested
