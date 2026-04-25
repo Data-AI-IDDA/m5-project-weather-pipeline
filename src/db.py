@@ -2,38 +2,39 @@
 import duckdb
 from pathlib import Path
 
-DB_PATH = "data/weather.duckdb"
+PROJECT_ROOT = Path(__file__).resolve().parents[1]
+
+DB_PATH = PROJECT_ROOT / "data" / "weather.duckdb"
 
 def get_connection():
-    return duckdb.connect(DB_PATH)
+    DB_PATH.parent.mkdir(parents=True, exist_ok=True)
+    return duckdb.connect(str(DB_PATH))
 
 def create_schemas():
-    conn = get_connection()
+    with get_connection() as conn:
+        conn.execute("CREATE SCHEMA IF NOT EXISTS raw;")
+        conn.execute("CREATE SCHEMA IF NOT EXISTS staging;")
+        conn.execute("CREATE SCHEMA IF NOT EXISTS analytics;")
 
-    conn.execute("CREATE SCHEMA IF NOT EXISTS raw;")
-    conn.execute("CREATE SCHEMA IF NOT EXISTS staging;")
-    conn.execute("CREATE SCHEMA IF NOT EXISTS analytics;")
-
-    conn.close()
 
 def load_raw_data():
-    conn = get_connection()
+    historical_path = PROJECT_ROOT / "data" / "raw" / "historical" / "*.parquet"
+    forecast_path = PROJECT_ROOT / "data" / "raw" / "forecast" / "*.parquet"
 
-    # Example: load all historical parquet files
-    conn.execute("""
-        CREATE OR REPLACE TABLE raw.historical AS
-        SELECT * FROM read_parquet('data/raw/historical/*.parquet');
-    """)
+    with get_connection() as conn:
+        conn.execute("CREATE SCHEMA IF NOT EXISTS raw;")
 
-    conn.execute("""
-        CREATE OR REPLACE TABLE raw.forecast AS
-        SELECT * FROM read_parquet('data/raw/forecast/*.parquet');
-    """)
+        conn.execute(f"""
+            CREATE OR REPLACE TABLE raw.historical AS
+            SELECT * FROM read_parquet('{historical_path.as_posix()}');
+        """)
 
-    conn.close()
+        conn.execute(f"""
+            CREATE OR REPLACE TABLE raw.forecast AS
+            SELECT * FROM read_parquet('{forecast_path.as_posix()}');
+        """)
+
 
 def run_query(query):
-    conn = get_connection()
-    result = conn.execute(query).df()
-    conn.close()
-    return result
+    with get_connection() as conn:
+        return conn.execute(query).df()
