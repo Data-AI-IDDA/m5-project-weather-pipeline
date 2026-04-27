@@ -1,16 +1,12 @@
 ![logo_ironhack_blue 7](https://user-images.githubusercontent.com/23629340/40541063-a07a0a8a-601a-11e8-91b5-2f13e4e6b441.png)
 
-# Project 1: Weather Intelligence Pipeline — Can We Trust This Data?
+#ClimaFit AI
 
-## Overview
+## Team: The Outliers 
 
-Over the next two weeks you will build a complete, end-to-end **weather intelligence pipeline**. You will ingest historical and real-time weather data from the Open-Meteo API, store it in a local DuckDB analytical database, perform rigorous statistical analysis, and build a predictive model — all while critically evaluating whether the data can be trusted.
+## Tourism Weather Risk & Activity Suitability Platform
 
-**Why weather?** Weather data is publicly available, refreshed daily, has genuine quality challenges (sensor gaps, interpolation artefacts, seasonal non-stationarity), and is the backbone of decisions in energy, agriculture, logistics, and insurance. It is the perfect playground for asking *"Can we trust this data?"*
-
-## 🌍 Tourism Weather Risk & Activity Suitability Platform
-
-### 📌 Project Overview
+### Project Overview
 
 This project provides data-driven weather insights to support tourism planning and decision-making. It helps travel agencies and tour operators evaluate the feasibility of outdoor activities based on both historical patterns and forecasted conditions.
 
@@ -35,7 +31,7 @@ Parameters:
 - daily weather variables
 
 ---
-### 👥 Team & Responsibilities
+### Team & Responsibilities
 
 - **Jala (Data Engineer):** Ingestion pipeline, DuckDB management, and automation  
 - **Roya (Team Manager & Data Quality):** Task coordination, data validation, and cleaning logic  
@@ -44,7 +40,7 @@ Parameters:
 
 ---
 
-### ⚙️ Technical Specifications
+### Technical Specifications
 
 #### 1. Dataset History Length  
 We use **5+ years of historical daily weather data (2021 up to the most recent available date)** to capture long-term seasonal patterns and climate variability across Azerbaijan.
@@ -57,7 +53,7 @@ The project targets **medium-range forecasting (up to 28 days)**, aligning with 
 
 ---
 
-## 🎯 Targets
+## Targets
 
 We use a **multi-output regression model** to predict key weather variables required for activity suitability decisions.
 
@@ -78,7 +74,7 @@ We use a **multi-output regression model** to predict key weather variables requ
 
 ---
 
-## 🧠 Features
+## Features
 
 ### Core & Derived Weather Features
 
@@ -153,7 +149,7 @@ We use a **multi-output regression model** to predict key weather variables requ
 | Derived    | humidity_7d_avg            | %    | 7-day rolling avg humidity   |
 
 ---
-## ⚙️ Model Approach
+## Model Approach
 
 We use historical data for model training and evaluation, applying a time-based split to ensure realistic performance assessment.
 
@@ -168,7 +164,7 @@ This approach allows us to:
 
 ---
 
-## 🔄 System Flow
+## System Flow
 
 Historical Weather Data (Open-Meteo API)
 +
@@ -192,25 +188,6 @@ Final Output:
 * Activity suitability (Suitable / Risky / Not Suitable)
 * Natural language explanation
 
-
-## Project Requirements
-
-| Week | Focus | Skills Applied |
-|------|-------|----------------|
-| **Week 1** (Days 1–5) | Data Engineering | Unit 2 — data sources, databases, ETL, pipelines |
-| **Week 2** (Days 6–8 + Presentation) | Statistical Analysis & Prediction | Units 3 & 4.1 — descriptive stats, hypothesis testing, correlation, regression & classification modeling |
-
-**You must:**
-
-1. Choose **3 or more cities** (at least one should be Baku or another city relevant to you).
-2. Ingest **at least 5 years** of daily historical weather data per city.
-3. Ingest **real-time forecast data** (7-day forecast) for the same cities.
-4. Store all data in a local **DuckDB** database with a well-designed schema.
-5. Conduct **exploratory data analysis** with descriptive statistics and visualisations.
-6. Formulate and execute **at least one formal hypothesis test** (more are encouraged if time permits).
-7. Build **at least one statistical prediction model** (e.g., predict next-day temperature, rain probability, or seasonal anomaly) with confidence intervals.
-8. Present findings on presentation day with a live pipeline demo.
-
 ## Timeline
 
 Each day has a brief in the [`daily-briefs/`](daily-briefs/) folder with detailed tasks, deliverables, and resources. Submit a Pull Request at the end of each day showing your incremental progress.
@@ -227,34 +204,6 @@ Each day has a brief in the [`daily-briefs/`](daily-briefs/) folder with detaile
 | 8 | 29 Apr | [Predictive Modeling & Evaluation](daily-briefs/day-08-predictive-modeling.md) | 2+ models, train/test, confidence intervals, residual diagnostics |
 | — | 30 Apr | [Final Presentation](daily-briefs/day-09-final-presentation.md) | 10 min presentation, live demo, project submission |
 
-## Getting Started
-
-### 1. Fork & Clone
-
-```bash
-# Fork this repo on GitHub, then:
-git clone https://github.com/<your-username>/m5-project-weather-pipeline.git
-cd m5-project-weather-pipeline
-```
-
-### 2. Install Dependencies
-
-```bash
-pip install -r requirements.txt
-```
-
-### 3. Verify the API
-
-No API key needed. Test with:
-
-```bash
-curl "https://archive-api.open-meteo.com/v1/archive?latitude=40.41&longitude=49.87&start_date=2024-01-01&end_date=2024-01-07&daily=temperature_2m_max"
-```
-
-### 4. Start Day 1
-
-Open [`daily-briefs/day-01-project-kickoff.md`](daily-briefs/day-01-project-kickoff.md) and follow the tasks.
-
 ## Repository Structure
 
 ```
@@ -266,7 +215,7 @@ m5-project-weather-pipeline/
 │   ├── day-01-project-kickoff.md
 │   ├── ...
 │   └── day-09-final-presentation.md
-├── src/                    # Your pipeline code
+├── src/                    # Pipeline code
 │   ├── __init__.py
 │   ├── ingestion.py        # Day 2
 │   ├── config.py           # Day 2
