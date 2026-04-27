@@ -239,8 +239,6 @@ m5-project-weather-pipeline/
 
 ## Open-Meteo API Reference
 
-[Open-Meteo](https://open-meteo.com/) is a free, open-source weather API. **No API key required.**
-
 **Historical weather endpoint:**
 
 ```
