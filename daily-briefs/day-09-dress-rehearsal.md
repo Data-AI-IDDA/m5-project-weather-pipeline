@@ -4,13 +4,13 @@
 
 Today is **not** the final presentation. It is your **dress rehearsal**: a full, timed run-through of your presentation, end-to-end, with the goal of identifying everything that still needs to be fixed before the real thing.
 
-The real presentation is scheduled separately by the teaching team and will be announced in class — it is **not** today and **not** tomorrow's submission day either. Tomorrow (final submission day) you will lock down your PDF and your repo. Use today to make tomorrow easy.
+The real presentation is scheduled separately by the teaching team and will be announced in class — it is **not** today and **not** tomorrow either. Tomorrow is the **readiness day**: you apply the fixes from today, freeze your PDF and your repo, and upload the readiness PDF. Use today to make tomorrow easy.
 
 ## Today's Objectives
 
 - Deliver a complete dress rehearsal of your presentation, end-to-end, within the time budget.
 - Catch issues — slides, demo, narration, timing — while there is still time to fix them.
-- Decide which fixes you will apply tomorrow (submission day) and assign them within the team.
+- Decide which fixes you will apply on the readiness day and assign them within the team.
 
 ## Tasks
 
@@ -55,7 +55,7 @@ If a member of the teaching team is in the room, ask for one round of structured
 
 ### Task 4 — Plan Tomorrow's Fixes
 
-End the day with a short, written **fix list** — each item assigned to a specific team member. This is what you will execute on submission day.
+End the day with a short, written **fix list** — each item assigned to a specific team member. This is what you will execute on the readiness day.
 
 Examples:
 

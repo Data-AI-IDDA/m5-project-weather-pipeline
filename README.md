@@ -14,7 +14,7 @@ Over the next two weeks you will build a complete, end-to-end **weather intellig
 |------|-------|----------------|
 | **Week 1** (Days 1–5) | Data Engineering | Unit 2 — data sources, databases, ETL, pipelines |
 | **Week 2** (Days 6–8) | Statistical Analysis & Prediction | Units 3 & 4.1 — descriptive stats, hypothesis testing, correlation, regression & classification modeling |
-| **Wrap-up** (Days 9–10 + Presentation) | Rehearse, freeze, present | Dress rehearsal, final PDF submission, in-class presentation (date announced separately) |
+| **Wrap-up** (Days 9–10 + Presentation) | Rehearse, get ready, present | Dress rehearsal, readiness check (final prep + PDF upload), in-class presentation (date announced separately) |
 
 **You must:**
 
@@ -41,8 +41,8 @@ Each day has a brief in the [`daily-briefs/`](daily-briefs/) folder with detaile
 | 6 | 27 Apr | [Exploratory Data Analysis](daily-briefs/day-06-eda.md) | Descriptive stats, distributions, time series, cross-city comparison |
 | 7 | 28 Apr | [Statistical Analysis & Feature Selection](daily-briefs/day-07-statistical-analysis.md) | Hypothesis testing, correlation, feature selection |
 | 8 | 29 Apr | [Predictive Modeling & Evaluation](daily-briefs/day-08-predictive-modeling.md) | 2+ models, train/test, confidence intervals, residual diagnostics |
-| 9 | 30 Apr | [Dress Rehearsal](daily-briefs/day-09-dress-rehearsal.md) | Full timed run-through, feedback, fix list for submission day |
-| 10 | 01 May | [Final Submission Day](daily-briefs/day-10-final-submission.md) | Apply fixes, freeze repo, upload final presentation PDF |
+| 9 | 30 Apr | [Dress Rehearsal](daily-briefs/day-09-dress-rehearsal.md) | Full timed run-through, feedback, fix list for the readiness day |
+| 10 | 01 May | [Readiness Check & Final Preparation](daily-briefs/day-10-readiness-check.md) | Apply fixes, freeze repo, upload final presentation PDF as readiness signal |
 | — | TBA | In-class presentation | 10 min presentation + live demo (date announced by the teaching team) |
 
 ## Getting Started
@@ -84,7 +84,7 @@ m5-project-weather-pipeline/
 │   ├── day-01-project-kickoff.md
 │   ├── ...
 │   ├── day-09-dress-rehearsal.md
-│   └── day-10-final-submission.md
+│   └── day-10-readiness-check.md
 ├── src/                    # Your pipeline code
 │   ├── __init__.py
 │   ├── ingestion.py        # Day 2
