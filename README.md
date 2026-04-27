@@ -13,7 +13,8 @@ Over the next two weeks you will build a complete, end-to-end **weather intellig
 | Week | Focus | Skills Applied |
 |------|-------|----------------|
 | **Week 1** (Days 1–5) | Data Engineering | Unit 2 — data sources, databases, ETL, pipelines |
-| **Week 2** (Days 6–8 + Presentation) | Statistical Analysis & Prediction | Units 3 & 4.1 — descriptive stats, hypothesis testing, correlation, regression & classification modeling |
+| **Week 2** (Days 6–8) | Statistical Analysis & Prediction | Units 3 & 4.1 — descriptive stats, hypothesis testing, correlation, regression & classification modeling |
+| **Wrap-up** (Days 9–10 + Presentation) | Rehearse, freeze, present | Dress rehearsal, final PDF submission, in-class presentation (date announced separately) |
 
 **You must:**
 
@@ -24,7 +25,7 @@ Over the next two weeks you will build a complete, end-to-end **weather intellig
 5. Conduct **exploratory data analysis** with descriptive statistics and visualisations.
 6. Formulate and execute **at least one formal hypothesis test** (more are encouraged if time permits).
 7. Build **at least one statistical prediction model** (e.g., predict next-day temperature, rain probability, or seasonal anomaly) with confidence intervals.
-8. Present findings on presentation day with a live pipeline demo.
+8. Present findings on the scheduled in-class presentation day with a live pipeline demo (date announced separately by the teaching team).
 
 ## Timeline
 
@@ -40,7 +41,9 @@ Each day has a brief in the [`daily-briefs/`](daily-briefs/) folder with detaile
 | 6 | 27 Apr | [Exploratory Data Analysis](daily-briefs/day-06-eda.md) | Descriptive stats, distributions, time series, cross-city comparison |
 | 7 | 28 Apr | [Statistical Analysis & Feature Selection](daily-briefs/day-07-statistical-analysis.md) | Hypothesis testing, correlation, feature selection |
 | 8 | 29 Apr | [Predictive Modeling & Evaluation](daily-briefs/day-08-predictive-modeling.md) | 2+ models, train/test, confidence intervals, residual diagnostics |
-| — | 30 Apr | [Final Presentation](daily-briefs/day-09-final-presentation.md) | 10 min presentation, live demo, project submission |
+| 9 | 30 Apr | [Dress Rehearsal](daily-briefs/day-09-dress-rehearsal.md) | Full timed run-through, feedback, fix list for submission day |
+| 10 | 01 May | [Final Submission Day](daily-briefs/day-10-final-submission.md) | Apply fixes, freeze repo, upload final presentation PDF |
+| — | TBA | In-class presentation | 10 min presentation + live demo (date announced by the teaching team) |
 
 ## Getting Started
 
@@ -80,7 +83,8 @@ m5-project-weather-pipeline/
 ├── daily-briefs/           # Day-by-day task briefs (read-only reference)
 │   ├── day-01-project-kickoff.md
 │   ├── ...
-│   └── day-09-final-presentation.md
+│   ├── day-09-dress-rehearsal.md
+│   └── day-10-final-submission.md
 ├── src/                    # Your pipeline code
 │   ├── __init__.py
 │   ├── ingestion.py        # Day 2
