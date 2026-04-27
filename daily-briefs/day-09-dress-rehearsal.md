@@ -4,7 +4,7 @@
 
 Today is **not** the final presentation. It is your **dress rehearsal**: a full, timed run-through of your presentation, end-to-end, with the goal of identifying everything that still needs to be fixed before the real thing.
 
-The real presentation is scheduled separately by the teaching team and will be announced in class — it is **not** today and **not** tomorrow either. Tomorrow is the **readiness day**: you apply the fixes from today, freeze your PDF and your repo, and upload the readiness PDF. Use today to make tomorrow easy.
+The **jury presentation** is scheduled separately and will be announced — it is **not** today and **not** tomorrow. Tomorrow (**01 May**) is **internal teaching-team readiness**: you apply the fixes from today, freeze your PDF and your repo, and upload the PDF for the teaching team (not the jury). Use today to make tomorrow easy.
 
 ## Today's Objectives
 
@@ -66,7 +66,7 @@ Examples:
 
 ## Deliverable
 
-Push your work to your team repo. There is **no** graded submission today — tomorrow's PDF upload is the only graded deliverable for Project 1.
+Push your work to your team repo. There is **no** portal submission today — tomorrow (**01 May**) you upload the PDF for **internal teaching-team readiness**. The **jury session** is later (date TBA).
 
 Recommended commits:
 

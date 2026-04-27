@@ -1,10 +1,8 @@
-# Day 10 — Readiness Check & Final Preparation
+# Day 10 — Internal Readiness (Teaching Team)
 
 ## Overview
 
-Today is **not** the in-class presentation (that is scheduled separately by the teaching team). Today is a **readiness day**: apply the fix list from yesterday's dress rehearsal, finalise the slide deck, freeze the team repo, and upload the PDF as the formal readiness signal.
-
-By the end of today the project should be presentation-ready: deck exported, repo clean and accessible, demo deterministic, team aligned on who presents what.
+Today is **not** the jury presentation. Today is the **internal readiness day** for the teaching team: apply the fix list from yesterday's dress rehearsal, finalise the slide deck, freeze the team repo, and upload the PDF in the Student Portal. The **formal presentation to the jury** happens on a **separate day, a few days later** — date announced by the teaching team.
 
 ## Today's Objectives
 
@@ -42,10 +40,10 @@ Confirm both teaching-team members are still listed as collaborators on the repo
 ### Task 4 — Export and Upload the Presentation PDF (readiness signal)
 
 - Export your slide deck as a **single PDF** (one team-wide file, not one per member).
-- Upload it as the **Project 1 – Readiness Check & Final Preparation** deliverable in the Student Portal.
+- Upload it as the **Project 1 – Internal Readiness (Teaching Team)** deliverable in the Student Portal.
 - Keep a copy in the repo as well — for example `reports/final_presentation.pdf`.
 
-This PDF upload is your team's formal readiness signal: it tells the teaching team you are ready to present. It is the **only graded submission** for Project 1. Grading is manual — there is no AI grading and no portal due-time. The actual in-class presentation happens on a separate day announced by the teaching team and may include further small fixes after today, but the version uploaded today should already stand on its own.
+This PDF is your internal readiness signal: it is **not** the jury session. The teaching team uses it to confirm you are on track. **The jury presentation** is a few days later (date TBA). Review in the portal is manual — there is no AI grading and no portal due-time. The deck you upload should already be a credible version of what you will show to the jury, but you may still polish after today until the jury date.
 
 ## Deliverable
 

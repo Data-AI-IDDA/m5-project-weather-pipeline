@@ -14,7 +14,7 @@ Over the next two weeks you will build a complete, end-to-end **weather intellig
 |------|-------|----------------|
 | **Week 1** (Days 1–5) | Data Engineering | Unit 2 — data sources, databases, ETL, pipelines |
 | **Week 2** (Days 6–8) | Statistical Analysis & Prediction | Units 3 & 4.1 — descriptive stats, hypothesis testing, correlation, regression & classification modeling |
-| **Wrap-up** (Days 9–10 + Presentation) | Rehearse, get ready, present | Dress rehearsal, readiness check (final prep + PDF upload), in-class presentation (date announced separately) |
+| **Wrap-up** (Days 9–10 + jury) | Rehearse, internal review, present to jury | Dress rehearsal, internal teaching-team PDF (01 May), jury session a few days later (date TBA) |
 
 **You must:**
 
@@ -25,7 +25,7 @@ Over the next two weeks you will build a complete, end-to-end **weather intellig
 5. Conduct **exploratory data analysis** with descriptive statistics and visualisations.
 6. Formulate and execute **at least one formal hypothesis test** (more are encouraged if time permits).
 7. Build **at least one statistical prediction model** (e.g., predict next-day temperature, rain probability, or seasonal anomaly) with confidence intervals.
-8. Present findings on the scheduled in-class presentation day with a live pipeline demo (date announced separately by the teaching team).
+8. Present findings to the **jury** on the scheduled session with a live pipeline demo (date announced separately — a few days after the internal PDF on 01 May).
 
 ## Timeline
 
@@ -42,8 +42,8 @@ Each day has a brief in the [`daily-briefs/`](daily-briefs/) folder with detaile
 | 7 | 28 Apr | [Statistical Analysis & Feature Selection](daily-briefs/day-07-statistical-analysis.md) | Hypothesis testing, correlation, feature selection |
 | 8 | 29 Apr | [Predictive Modeling & Evaluation](daily-briefs/day-08-predictive-modeling.md) | 2+ models, train/test, confidence intervals, residual diagnostics |
 | 9 | 30 Apr | [Dress Rehearsal](daily-briefs/day-09-dress-rehearsal.md) | Full timed run-through, feedback, fix list for the readiness day |
-| 10 | 01 May | [Readiness Check & Final Preparation](daily-briefs/day-10-readiness-check.md) | Apply fixes, freeze repo, upload final presentation PDF as readiness signal |
-| — | TBA | In-class presentation | 10 min presentation + live demo (date announced by the teaching team) |
+| 10 | 01 May | [Internal Readiness (Teaching Team)](daily-briefs/day-10-readiness-check.md) | Apply fixes, freeze repo, upload PDF for internal review (not the jury session) |
+| — | TBA | Jury presentation | ~10 min + live demo (date announced by the teaching team; not 01 May) |
 
 ## Getting Started
 
