@@ -1,5 +1,6 @@
 <img src="assets/logo.png" width="300"/>
-# ClimaFit AI
+
+## ClimaFit AI
 
 ## Team: The Outliers 
 
