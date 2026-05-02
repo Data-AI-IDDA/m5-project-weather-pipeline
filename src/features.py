@@ -66,25 +66,25 @@ def compute_stage_features(stage_df, stage_name):
 
     return {
         # Temperature
-        f"{stage_name}_temp_mean":        round(stage_df["temp_mean"].mean(), 4),
-        f"{stage_name}_temp_min_mean":    round(stage_df["temp_min"].mean(), 4),   # KEY night temp
-        f"{stage_name}_temp_max_mean":    round(stage_df["temp_max"].mean(), 4),
+        f"{stage_name}_temp_mean": round(stage_df["temp_mean"].mean(), 4),
+        f"{stage_name}_temp_min_mean": round(stage_df["temp_min"].mean(), 4),   # KEY night temp
+        f"{stage_name}_temp_max_mean": round(stage_df["temp_max"].mean(), 4),
         f"{stage_name}_heat_stress_days": int((stage_df["temp_max"] > 35).sum()),  # proper threshold
-        f"{stage_name}_frost_days":       int((stage_df["temp_min"] < 0).sum()),   # proper threshold
-        f"{stage_name}_GDD":              round(gdd_values.sum(), 4),
+        f"{stage_name}_frost_days": int((stage_df["temp_min"] < 0).sum()),   # proper threshold
+        f"{stage_name}_GDD": round(gdd_values.sum(), 4),
         # Precipitation
-        f"{stage_name}_total_rain":       round(stage_df["precipitation"].sum(), 4),
-        f"{stage_name}_rainy_days":       int((stage_df["precipitation"] > 1).sum()),
-        f"{stage_name}_dry_days":         int((stage_df["precipitation"] < 1).sum()),
-        f"{stage_name}_max_dry_streak":   max_dry_streak(stage_df["precipitation"]),
+        f"{stage_name}_total_rain": round(stage_df["precipitation"].sum(), 4),
+        f"{stage_name}_rainy_days": int((stage_df["precipitation"] > 1).sum()),
+        f"{stage_name}_dry_days": int((stage_df["precipitation"] < 1).sum()),
+        f"{stage_name}_max_dry_streak": max_dry_streak(stage_df["precipitation"]),
         # Humidity
-        f"{stage_name}_humidity_mean":    round(stage_df["humidity_mean"].mean(), 4),
+        f"{stage_name}_humidity_mean": round(stage_df["humidity_mean"].mean(), 4),
         # Wind
-        f"{stage_name}_wind_mean":        round(stage_df["wind_speed"].mean(), 4),
+        f"{stage_name}_wind_mean": round(stage_df["wind_speed"].mean(), 4),
         # Evapotranspiration
-        f"{stage_name}_et0_total":        round(stage_df["et0"].sum(), 4),
+        f"{stage_name}_et0_total": round(stage_df["et0"].sum(), 4),
         # Sunshine duration — solar energy available for photosynthesis
-        f"{stage_name}_sunshine_total":   round(stage_df["sunshine"].sum(), 4),
+        f"{stage_name}_sunshine_total": round(stage_df["sunshine"].sum(), 4),
     }
 
 
@@ -116,16 +116,16 @@ def build_features(con):
 
     log(f"  Cotton rows:  {len(cotton)}")
     log(f"  Weather rows: {len(weather)}")
-    log(f"  Districts:    {cotton['region'].nunique()}")
+    log(f"  Districts: {cotton['region'].nunique()}")
     log(f"  Stage windows (DOY):")
     for stage, (start_doy, end_doy) in STAGES.items():
-        log(f"    {stage:<12} DOY {start_doy}–{end_doy}")
-    log(f"  Processing {len(cotton)} district-year combinations...")
+        log(f"{stage:<12} DOY {start_doy}–{end_doy}")
+    log(f"Processing {len(cotton)} district-year combinations...")
 
     all_rows = []
     for i, row in cotton.iterrows():
         region  = row["region"]
-        year    = int(row["year"])
+        year = int(row["year"])
         yield_t = row["yield_tonnes"]
         station = row["weather_station"]
 
@@ -135,7 +135,7 @@ def build_features(con):
         ]
 
         if daily.empty:
-            log(f"  WARNING: No weather data for {station} in {year} — skipping")
+            log(f" WARNING: No weather data for {station} in {year} — skipping")
             continue
 
         feat = {
@@ -156,14 +156,14 @@ def build_features(con):
         all_rows.append(feat)
 
         if (i + 1) % 100 == 0:
-            log(f"  Processed {i + 1}/{len(cotton)} rows...")
+            log(f"Processed {i + 1}/{len(cotton)} rows...")
 
     df_feat = pd.DataFrame(all_rows).sort_values(
         ["region", "year"]
     ).reset_index(drop=True)
 
     rows_before  = len(df_feat)
-    df_feat      = df_feat.dropna().reset_index(drop=True)
+    df_feat = df_feat.dropna().reset_index(drop=True)
     rows_dropped = rows_before - len(df_feat)
 
     if rows_dropped > 0:
@@ -171,17 +171,16 @@ def build_features(con):
         log(f"  Reason: missing weather coverage for some DOY windows")
 
     log(f"\n  Final shape:  {df_feat.shape}")
-    log(f"  Districts:    {df_feat['region'].nunique()}")
-    log(f"  Years:        {df_feat['year'].min()} – {df_feat['year'].max()}")
-    log(f"  Null check:   {df_feat.isnull().sum().sum()} nulls")
-    log(f"  Features per stage: 14 × 3 stages = 42 weather features")
+    log(f"Districts: {df_feat['region'].nunique()}")
+    log(f"Years: {df_feat['year'].min()} – {df_feat['year'].max()}")
+    log(f" Null check: {df_feat.isnull().sum().sum()} nulls")
+    log(f"Features per stage: 14 × 3 stages = 42 weather features")
 
     con.execute("DROP TABLE IF EXISTS features")
     con.execute("CREATE TABLE features AS SELECT * FROM df_feat")
     log("  features → DuckDB ✓")
 
     return df_feat
-
 
 # ─────────────────────────────────────────────────────────────────────────────
 # STEP 2 — BUILD features_with_risk TABLE (for website only)
@@ -190,7 +189,7 @@ def build_features(con):
 def build_features_with_risk(con):
     log("=" * 55)
     log("STEP 7 — Building Risk Scores (for website only)")
-    log("         ⚠ These will NOT be used in model training")
+    log("These will NOT be used in model training")
     log("=" * 55)
 
     df = con.execute("SELECT * FROM features").df()
@@ -209,25 +208,25 @@ def build_features_with_risk(con):
 
     # ── Squaring Risk (DOY 152–195) ───────────────────────────────────────
     df["squaring_risk_score"] = weighted_avg([
-        (normalize(df["squaring_heat_stress_days"],   10), 0.30),
+        (normalize(df["squaring_heat_stress_days"],10), 0.30),
         (normalize_inverse(df["squaring_total_rain"], 80, 20), 0.25),
-        (normalize_inverse(df["squaring_GDD"],       600, 200), 0.25),
-        (normalize(df["squaring_max_dry_streak"],     20), 0.20),
+        (normalize_inverse(df["squaring_GDD"], 600, 200), 0.25),
+        (normalize(df["squaring_max_dry_streak"], 20), 0.20),
     ]).clip(0, 100)
 
     # ── Flowering Risk (DOY 196–243) — critical stage ─────────────────────
     df["flowering_risk_score"] = weighted_avg([
-        (normalize(df["flowering_temp_min_mean"],      30), 0.45),
-        (normalize(df["flowering_heat_stress_days"],   20), 0.25),
+        (normalize(df["flowering_temp_min_mean"], 30), 0.45),
+        (normalize(df["flowering_heat_stress_days"],  20), 0.25),
         (normalize_inverse(df["flowering_total_rain"], 60, 15), 0.15),
-        (normalize(df["flowering_et0_total"],         200), 0.15),
+        (normalize(df["flowering_et0_total"], 200), 0.15),
     ]).clip(0, 100)
 
     # ── Bolling Risk (DOY 244–288) ────────────────────────────────────────
     df["bolling_risk_score"] = weighted_avg([
-        (normalize(df["bolling_rainy_days"],    25), 0.45),
+        (normalize(df["bolling_rainy_days"], 25), 0.45),
         (normalize(df["bolling_humidity_mean"], 85), 0.35),
-        (normalize(df["bolling_frost_days"],     5), 0.20),
+        (normalize(df["bolling_frost_days"], 5), 0.20),
     ]).clip(0, 100)
 
     # ── Overall Risk ──────────────────────────────────────────────────────
@@ -240,27 +239,27 @@ def build_features_with_risk(con):
     # ── Risk Labels from yield deviation ─────────────────────────────────
     region_avg = df.groupby("region")["yield_tonnes"].transform("mean")
     region_std = df.groupby("region")["yield_tonnes"].transform("std")
-    df["yield_deviation"]    = (df["yield_tonnes"] - region_avg) / region_std
+    df["yield_deviation"]  = (df["yield_tonnes"] - region_avg) / region_std
     df["overall_risk_label"] = (df["yield_deviation"] < -0.5).astype(int)
 
     for stage in ["squaring", "flowering", "bolling"]:
-        col       = f"{stage}_risk_score"
+        col = f"{stage}_risk_score"
         threshold = df[col].quantile(0.60)
         df[f"{stage}_risk_label"] = (df[col] >= threshold).astype(int)
 
     # ── Validate ──────────────────────────────────────────────────────────
     avg_by_label = df.groupby("overall_risk_label")["yield_tonnes"].mean()
     log(f"\n  Risk label validation:")
-    log(f"    Safe  (label=0) avg yield: {avg_by_label.get(0, 0):.1f}t")
-    log(f"    Risky (label=1) avg yield: {avg_by_label.get(1, 0):.1f}t")
+    log(f"Safe  (label=0) avg yield: {avg_by_label.get(0, 0):.1f}t")
+    log(f" Risky (label=1) avg yield: {avg_by_label.get(1, 0):.1f}t")
     status = "PASSED ✓" if avg_by_label.get(0, 0) > avg_by_label.get(1, 0) \
              else "WARNING ✗"
-    log(f"    Validation: {status}")
+    log(f" Validation: {status}")
 
     con.execute("DROP TABLE IF EXISTS features_with_risk")
     con.execute("CREATE TABLE features_with_risk AS SELECT * FROM df")
-    log("\n  features_with_risk → DuckDB ✓")
-    log("  (used for website visualization only — NOT for model training)")
+    log("\n features_with_risk → DuckDB ✓")
+    log("(used for website visualization only — NOT for model training)")
 
     return df 
 
